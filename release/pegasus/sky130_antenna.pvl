@@ -1,0 +1,138 @@
+// sky130 antenna checks for Pegasus, written by sky130cad/antenna_deck.py from SkyWater
+// antenna rules (table Ig, S8PIR-10R). Run on a full layout: pegasus -drc ... sky130_antenna.pvl
+results_db -drc "sky130_antenna.drc_errors.ascii" -ascii;
+max_results -drc all;
+unit -length u;
+text_depth -primary;
+incr_conn yes;
+
+layer_def dnwell 1000;
+layer_map 64 -datatype 18 1000;
+layer_def nwell 1001;
+layer_map 64 -datatype 20 1001;
+layer_def diff 1002;
+layer_map 65 -datatype 20 1002;
+layer_def tap 1003;
+layer_map 65 -datatype 44 1003;
+layer_def poly 1004;
+layer_map 66 -datatype 20 1004;
+layer_def licon 1005;
+layer_map 66 -datatype 44 1005;
+layer_def npc 1006;
+layer_map 95 -datatype 20 1006;
+layer_def nsdm 1007;
+layer_map 93 -datatype 44 1007;
+layer_def psdm 1008;
+layer_map 94 -datatype 20 1008;
+layer_def hvtp 1009;
+layer_map 78 -datatype 44 1009;
+layer_def lvtn 1010;
+layer_map 125 -datatype 44 1010;
+layer_def hvi 1011;
+layer_map 75 -datatype 20 1011;
+layer_def li1 1012;
+layer_map 67 -datatype 20 1012;
+layer_def mcon 1013;
+layer_map 67 -datatype 44 1013;
+layer_def met1 1014;
+layer_map 68 -datatype 20 1014;
+layer_def via 1015;
+layer_map 68 -datatype 44 1015;
+layer_def met2 1016;
+layer_map 69 -datatype 20 1016;
+layer_def via2 1017;
+layer_map 69 -datatype 44 1017;
+layer_def met3 1018;
+layer_map 70 -datatype 20 1018;
+layer_def via3 1019;
+layer_map 70 -datatype 44 1019;
+layer_def met4 1020;
+layer_map 71 -datatype 20 1020;
+layer_def via4 1021;
+layer_map 71 -datatype 44 1021;
+layer_def met5 1022;
+layer_map 72 -datatype 20 1022;
+layer_def pad 1023;
+layer_map 76 -datatype 20 1023;
+layer_def areaid_sc 1024;
+layer_map 81 -datatype 4 1024;
+layer_def areaid_ce 1025;
+layer_map 81 -datatype 2 1025;
+
+and poly diff gate;
+or diff tap difftap;
+not tap poly ptap_np;
+not ptap_np nwell pshort;
+or poly pshort poly_or_pshort;
+not difftap poly_or_pshort antdiode;
+and licon difftap licon_d;
+not licon difftap licon_nd;
+and licon_nd poly licon_p;
+
+rule ant.poly {
+    caption ant.poly: poly sidewall area (perimeter x 0.18) / gate area > 50;
+    connect poly gate;
+    antenna poly gate -gt 50 -expr "perimeter(poly) * 0.18 / area(gate)";
+}
+rule ant.licon {
+    caption ant.licon: poly licon area / gate area > 3;
+    connect poly licon_p;
+    antenna licon_p gate -gt 3 -expr "area(licon_p) / area(gate)";
+}
+rule ant.li {
+    caption ant.li: li1 sidewall (perimeter x 0.10) / gate - 450 x diode area > 75;
+    connect li1 poly -by licon_p;
+    connect li1 antdiode -by licon_d;
+    connect li1 pshort -by licon_d;
+    antenna li1 antdiode pshort gate -gt 75 -expr "!area(pshort) * (perimeter(li1) * 0.10 / area(gate) - 450 * area(antdiode))";
+}
+rule ant.mcon {
+    caption ant.mcon: mcon area / gate - 18 x diode area > 3;
+    connect li1 mcon;
+    antenna mcon antdiode pshort gate -gt 3 -expr "!area(pshort) * (area(mcon) / area(gate) - 18 * area(antdiode))";
+}
+rule ant.met1 {
+    caption ant.met1: met1 sidewall (perimeter x 0.35) / gate - 400 x diode area - 2200 > 400;
+    connect met1 li1 -by mcon;
+    antenna met1 antdiode pshort gate -gt 400 -expr "!area(pshort) * (perimeter(met1) * 0.35 / area(gate) - 400 * area(antdiode) - 2200 * (1 - !area(antdiode)))";
+}
+rule ant.via {
+    caption ant.via: via area / gate - 36 x diode area > 6;
+    connect met1 via;
+    antenna via antdiode pshort gate -gt 6 -expr "!area(pshort) * (area(via) / area(gate) - 36 * area(antdiode))";
+}
+rule ant.met2 {
+    caption ant.met2: met2 sidewall (perimeter x 0.35) / gate - 400 x diode area - 2200 > 400;
+    connect met2 met1 -by via;
+    antenna met2 antdiode pshort gate -gt 400 -expr "!area(pshort) * (perimeter(met2) * 0.35 / area(gate) - 400 * area(antdiode) - 2200 * (1 - !area(antdiode)))";
+}
+rule ant.via2 {
+    caption ant.via2: via2 area / gate - 36 x diode area > 6;
+    connect met2 via2;
+    antenna via2 antdiode pshort gate -gt 6 -expr "!area(pshort) * (area(via2) / area(gate) - 36 * area(antdiode))";
+}
+rule ant.met3 {
+    caption ant.met3: met3 sidewall (perimeter x 0.80) / gate - 400 x diode area - 2200 > 400;
+    connect met3 met2 -by via2;
+    antenna met3 antdiode pshort gate -gt 400 -expr "!area(pshort) * (perimeter(met3) * 0.80 / area(gate) - 400 * area(antdiode) - 2200 * (1 - !area(antdiode)))";
+}
+rule ant.via3 {
+    caption ant.via3: via3 area / gate - 36 x diode area > 6;
+    connect met3 via3;
+    antenna via3 antdiode pshort gate -gt 6 -expr "!area(pshort) * (area(via3) / area(gate) - 36 * area(antdiode))";
+}
+rule ant.met4 {
+    caption ant.met4: met4 sidewall (perimeter x 0.80) / gate - 400 x diode area - 2200 > 400;
+    connect met4 met3 -by via3;
+    antenna met4 antdiode pshort gate -gt 400 -expr "!area(pshort) * (perimeter(met4) * 0.80 / area(gate) - 400 * area(antdiode) - 2200 * (1 - !area(antdiode)))";
+}
+rule ant.via4 {
+    caption ant.via4: via4 area / gate - 36 x diode area > 6;
+    connect met4 via4;
+    antenna via4 antdiode pshort gate -gt 6 -expr "!area(pshort) * (area(via4) / area(gate) - 36 * area(antdiode))";
+}
+rule ant.met5 {
+    caption ant.met5: met5 sidewall (perimeter x 1.20) / gate - 400 x diode area - 2200 > 400;
+    connect met5 met4 -by via4;
+    antenna met5 antdiode pshort gate -gt 400 -expr "!area(pshort) * (perimeter(met5) * 1.20 / area(gate) - 400 * area(antdiode) - 2200 * (1 - !area(antdiode)))";
+}

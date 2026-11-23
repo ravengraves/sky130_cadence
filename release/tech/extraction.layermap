@@ -1,0 +1,14 @@
+# Explicit LEF-to-QRC mapping (sky130cad/tech.py). Source this before extraction.
+extraction_setup \
+    -technology_layer_map \
+        li1 li1 \
+        mcon mcon \
+        met1 met1 \
+        via via \
+        met2 met2 \
+        via2 via2 \
+        met3 met3 \
+        via3 via3 \
+        met4 met4 \
+        via4 via4 \
+        met5 met5

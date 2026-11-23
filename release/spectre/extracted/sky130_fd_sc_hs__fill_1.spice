@@ -1,0 +1,38 @@
+* Extracted by Quantus, converted by sky130cad/quantus.py
+*
+*
+*
+*                       LINUX           Wed Nov 18 08:39:38 2026
+*
+*
+*
+*  PROGRAM  advgen
+*
+*  Name           : advgen - Quantus - (64-bit)
+*  Version        : 25.1.0-p047
+*  Build Date     : Thu Dec 11 23:20:30 PST 2025
+*
+*  HSPICE LIBRARY
+*
+*  OPERATING_TEMPERATURE 150
+*  QRC_TECH_DIR <path>/tech
+*
+*
+*
+*
+.SUBCKT sky130_fd_sc_hs__fill_1 VGND VPWR VPB VNB
+*
+*
+*  caps2d version: 10
+*
+*
+*       CAPACITOR CARDS
+*
+*
+C1	VGND	VNB	1.43428e-16
+C2	VPWR	VNB	1.43428e-16
+*
+*
+.ENDS sky130_fd_sc_hs__fill_1
+*
+

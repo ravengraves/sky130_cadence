@@ -1,0 +1,4 @@
+-canonical_res_caps
+-exclude_gate_res
+-length_units meters
+-cap_ground_layer pwell

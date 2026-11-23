@@ -1,0 +1,6 @@
+.SUBCKT pfet_01v8_hvt_w1_l0p15_nf4_tie D G S
+M0 D G S S pfet_01v8_hvt w=1 l=0.15
+M1 D G S S pfet_01v8_hvt w=1 l=0.15
+M2 D G S S pfet_01v8_hvt w=1 l=0.15
+M3 D G S S pfet_01v8_hvt w=1 l=0.15
+.ENDS

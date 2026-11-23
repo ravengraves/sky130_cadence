@@ -1,0 +1,14 @@
+* Inverter delay at the SS corner, 150 C, 1.6 V. Run in this folder: spectre inverter_ss.scs
+simulator lang=spice
+.include "models/sky130_digital_ss.spice"
+.include "netlists/sky130_fd_sc_hs__inv_1.spice"
+.param vdd=1.6 tr=0.0636e-9 cl=9.07e-15
+vdd vdd 0 vdd
+vin a 0 pwl(0 0 1e-9 0 '1e-9+tr/0.6' vdd 3e-9 vdd '3e-9+tr/0.6' 0)
+xinv a 0 0 vdd vdd y sky130_fd_sc_hs__inv_1
+cload y 0 cl
+.temp 150
+.tran 0.5p 5n
+.meas tran tpd_fall trig v(a) val='vdd/2' rise=1 targ v(y) val='vdd/2' fall=1
+.meas tran tpd_rise trig v(a) val='vdd/2' fall=1 targ v(y) val='vdd/2' rise=1
+.end

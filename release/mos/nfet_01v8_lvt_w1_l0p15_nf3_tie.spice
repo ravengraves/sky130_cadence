@@ -1,0 +1,5 @@
+.subckt nfet_01v8_lvt_w1_l0p15_nf3_tie D G S
+X0 D G S S sky130_fd_pr__nfet_01v8_lvt w=1 l=0.15
+X1 D G S S sky130_fd_pr__nfet_01v8_lvt w=1 l=0.15
+X2 D G S S sky130_fd_pr__nfet_01v8_lvt w=1 l=0.15
+.ends

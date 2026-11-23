@@ -1,0 +1,3 @@
+.SUBCKT pfet_01v8_w0p55_l0p15_nf1 D G S B
+M0 D G S B pfet_01v8 w=0.55 l=0.15
+.ENDS

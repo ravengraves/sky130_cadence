@@ -1,0 +1,5 @@
+0	f:ant.poly	ant.poly	0	0
+1	p:ant.poly	-	50	0
+2	f:ant.met1	ant.met1	100	0
+3	p:ant.met1	-	150	0
+4	p:ant.met1_diode	-	200	0

@@ -1,0 +1,5 @@
+# Start Virtuoso in this directory (or INCLUDE this file from your cds.lib).
+SOFTINCLUDE $CDS_INST_DIR/share/cdssetup/cds.lib
+DEFINE sky130 ./sky130
+DEFINE sky130_mos ./sky130_mos
+DEFINE sky130_fd_sc_hs ../library/oa/sky130_fd_sc_hs

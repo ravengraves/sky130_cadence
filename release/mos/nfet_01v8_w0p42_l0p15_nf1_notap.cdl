@@ -1,0 +1,3 @@
+.SUBCKT nfet_01v8_w0p42_l0p15_nf1_notap D G S B
+M0 D G S B nfet_01v8 w=0.42 l=0.15
+.ENDS

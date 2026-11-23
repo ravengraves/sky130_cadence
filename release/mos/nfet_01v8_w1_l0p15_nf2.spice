@@ -1,0 +1,4 @@
+.subckt nfet_01v8_w1_l0p15_nf2 D G S B
+X0 D G S B sky130_fd_pr__nfet_01v8 w=1 l=0.15
+X1 D G S B sky130_fd_pr__nfet_01v8 w=1 l=0.15
+.ends

@@ -1,0 +1,2 @@
+DEFINE sky130 ../../virtuoso/sky130
+DEFINE sky130_fd_sc_hs ./sky130_fd_sc_hs

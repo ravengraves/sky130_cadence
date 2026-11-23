@@ -1,0 +1,67 @@
+* Extracted by Quantus, converted by sky130cad/quantus.py
+*
+*
+*
+*                       LINUX           Wed Nov 18 09:13:31 2026
+*
+*
+*
+*  PROGRAM  advgen
+*
+*  Name           : advgen - Quantus - (64-bit)
+*  Version        : 25.1.0-p047
+*  Build Date     : Thu Dec 11 23:20:30 PST 2025
+*
+*  HSPICE LIBRARY
+*
+*  OPERATING_TEMPERATURE 150
+*  QRC_TECH_DIR <path>/tech
+*
+*
+*
+*
+.SUBCKT sky130_fd_sc_hs__tapmet1_2 VGND VNB VPB VPWR
+*
+*
+*  caps2d version: 10
+*
+*
+*       RESISTOR AND CAP/DIODE CARDS
+*
+Rf1	VPB#1	VPB#2	1.585434
+Rf2	VPB#3	VPB#4	1.585434
+Rf3	VPB#2	VPB#3	3.759755
+Rf4	VPB	VPB#1	3.750000
+Rf5	VNB#1	VNB#2	1.516875
+Rf6	VNB#3	VNB#4	1.525445
+Rf7	VNB#2	VNB#3	3.825562
+Rf8	VNB	VNB#4	3.750000
+Re1	VNB	VNB#1	9.777782
+Re2	VPB	VPB#4	9.777782
+*
+*       CAPACITOR CARDS
+*
+*
+C1	VPB	VNB	3.71557e-17
+C2	VPB#2	VNB	7.48578e-17
+C3	VPB#3	VNB	5.20747e-17
+C4	VNB#2	VNB	7.6515e-17
+C5	VNB#3	VNB	9.66272e-17
+C6	VPB	VPB#2	2.72642e-17
+C7	VPB	VPB#3	2.5223e-17
+C8	VPB	VNB#3	4.30344e-18
+C9	VNB#2	VPB#2	5.40924e-18
+C10	VNB#3	VPB#2	4.78818e-18
+C11	VNB#3	VPB#3	5.38921e-18
+C12	VPWR	VPB#2	6.60803e-17
+C13	VGND	VNB	2.27105e-16
+C14	VPWR	VPB#3	3.47123e-17
+C15	VPWR	VNB	1.70473e-16
+C16	VPB	VPWR	5.45146e-17
+C17	VGND	VNB#2	3.47918e-17
+C18	VGND	VNB#3	6.59352e-17
+*
+*
+.ENDS sky130_fd_sc_hs__tapmet1_2
+*
+

@@ -1,0 +1,44 @@
+--- a/cells/diode/sky130_fd_sc_hs__diode_2.lef
++++ b/cells/diode/sky130_fd_sc_hs__diode_2.lef
+@@ -20,7 +20,7 @@
+   BUSBITCHARS "[]" ;
+ MACRO sky130_fd_sc_hs__diode_2
+   CLASS CORE ANTENNACELL ;
+-  FOREIGN scs8hs_diode_2 ;
++  FOREIGN sky130_fd_sc_hs__diode_2 ;
+   ORIGIN  0.000000  0.000000 ;
+   SIZE  0.960000 BY  3.330000 ;
+   SYMMETRY X Y ;
+--- a/cells/fill_diode/sky130_fd_sc_hs__fill_diode_2.lef
++++ b/cells/fill_diode/sky130_fd_sc_hs__fill_diode_2.lef
+@@ -20,7 +20,7 @@
+   BUSBITCHARS "[]" ;
+ MACRO sky130_fd_sc_hs__fill_diode_2
+   CLASS CORE SPACER ;
+-  FOREIGN scs8hs_fill_diode_2 ;
++  FOREIGN sky130_fd_sc_hs__fill_diode_2 ;
+   ORIGIN  0.000000  0.000000 ;
+   SIZE  0.960000 BY  3.330000 ;
+   SYMMETRY X Y ;
+--- a/cells/fill_diode/sky130_fd_sc_hs__fill_diode_4.lef
++++ b/cells/fill_diode/sky130_fd_sc_hs__fill_diode_4.lef
+@@ -20,7 +20,7 @@
+   BUSBITCHARS "[]" ;
+ MACRO sky130_fd_sc_hs__fill_diode_4
+   CLASS CORE SPACER ;
+-  FOREIGN scs8hs_fill_diode_4 ;
++  FOREIGN sky130_fd_sc_hs__fill_diode_4 ;
+   ORIGIN  0.000000  0.000000 ;
+   SIZE  1.920000 BY  3.330000 ;
+   SYMMETRY X Y ;
+--- a/cells/fill_diode/sky130_fd_sc_hs__fill_diode_8.lef
++++ b/cells/fill_diode/sky130_fd_sc_hs__fill_diode_8.lef
+@@ -20,7 +20,7 @@
+   BUSBITCHARS "[]" ;
+ MACRO sky130_fd_sc_hs__fill_diode_8
+   CLASS CORE SPACER ;
+-  FOREIGN scs8hs_fill_diode_8 ;
++  FOREIGN sky130_fd_sc_hs__fill_diode_8 ;
+   ORIGIN  0.000000  0.000000 ;
+   SIZE  3.840000 BY  3.330000 ;
+   SYMMETRY X Y ;

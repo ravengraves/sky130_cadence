@@ -1,0 +1,53 @@
+* Extracted by Quantus, converted by sky130cad/quantus.py
+*
+*
+*
+*                       LINUX           Wed Nov 18 08:40:25 2026
+*
+*
+*
+*  PROGRAM  advgen
+*
+*  Name           : advgen - Quantus - (64-bit)
+*  Version        : 25.1.0-p047
+*  Build Date     : Thu Dec 11 23:20:30 PST 2025
+*
+*  HSPICE LIBRARY
+*
+*  OPERATING_TEMPERATURE 150
+*  QRC_TECH_DIR <path>/tech
+*
+*
+*
+*
+.SUBCKT sky130_fd_sc_hs__fill_diode_4 VPB VNB VGND VPWR
+*
+*
+*  caps2d version: 10
+*
+*
+*       RESISTOR AND CAP/DIODE CARDS
+*
+Rf1	VPWR#1	VPWR#2	17.314686
+Rf2	VPWR#2	VPWR#1	17.314686
+Rf3	VGND#1	VGND#2	17.314686
+Rf4	VGND#2	VGND#1	17.314686
+Re1	VPWR#2	VPWR	2.455682
+Re2	VGND	VGND#2	2.455774
+*
+*       CAPACITOR CARDS
+*
+*
+C1	VGND	VNB	7.68672e-17
+C2	VPWR	VNB	7.70017e-17
+C3	VGND#2	VNB	2.27448e-16
+C4	VPWR#2	VNB	2.27314e-16
+C5	VGND	VGND#2	1.13592e-16
+C6	VPWR	VPWR#2	1.14118e-16
+C7	VGND#2	VGND#1	9.26449e-17
+C8	VPWR#2	VPWR#1	9.26449e-17
+*
+*
+.ENDS sky130_fd_sc_hs__fill_diode_4
+*
+

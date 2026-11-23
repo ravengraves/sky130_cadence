@@ -1,0 +1,3 @@
+.subckt pfet_01v8_hvt_w0p42_l0p15_nf1 D G S B
+X0 D G S B sky130_fd_pr__pfet_01v8_hvt w=0.42 l=0.15
+.ends

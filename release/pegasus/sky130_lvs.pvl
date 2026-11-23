@@ -1,0 +1,275 @@
+// sky130 LVS deck for Pegasus (1.8 V digital devices). Written by sky130cad/lvs_deck.py
+// from SkyWater sky130 layer definitions (Apache-2.0). See the module docstring.
+
+abort_on_layout_error no
+text_depth -primary
+lvs_recognize_gates -none
+lvs_cdn_flow_options -cdl_use_scale
+lvs_reduce yes -parallel_mos
+lvs_reduce no -series_mos
+
+// ---- input layers
+layer_def nwell_in 1
+layer_map 64 -datatype 20 1
+layer_def nwell_pin 2
+layer_map 64 -datatype 16 2
+layer_def dnwell 3
+layer_map 64 -datatype 18 3
+layer_def pwell_in 4
+layer_map 64 -datatype 44 4
+layer_def pwell_pin 5
+layer_map 122 -datatype 16 5
+layer_def diff 6
+layer_map 65 -datatype 20 6
+layer_def tap 7
+layer_map 65 -datatype 44 7
+layer_def poly_in 8
+layer_map 66 -datatype 20 8
+layer_def poly_pin 9
+layer_map 66 -datatype 16 9
+layer_def licon 10
+layer_map 66 -datatype 44 10
+layer_def li1_in 11
+layer_map 67 -datatype 20 11
+layer_def li1_pin 12
+layer_map 67 -datatype 16 12
+layer_def mcon 13
+layer_map 67 -datatype 44 13
+layer_def met1_in 14
+layer_map 68 -datatype 20 14
+layer_def met1_pin 15
+layer_map 68 -datatype 16 15
+layer_def via 16
+layer_map 68 -datatype 44 16
+layer_def met2_in 17
+layer_map 69 -datatype 20 17
+layer_def met2_pin 18
+layer_map 69 -datatype 16 18
+layer_def via2 19
+layer_map 69 -datatype 44 19
+layer_def met3_in 20
+layer_map 70 -datatype 20 20
+layer_def met3_pin 21
+layer_map 70 -datatype 16 21
+layer_def via3 22
+layer_map 70 -datatype 44 22
+layer_def met4_in 23
+layer_map 71 -datatype 20 23
+layer_def met4_pin 24
+layer_map 71 -datatype 16 24
+layer_def via4 25
+layer_map 71 -datatype 44 25
+layer_def met5_in 26
+layer_map 72 -datatype 20 26
+layer_def met5_pin 27
+layer_map 72 -datatype 16 27
+layer_def nsdm 28
+layer_map 93 -datatype 44 28
+layer_def psdm 29
+layer_map 94 -datatype 20 29
+layer_def lvtn 30
+layer_map 125 -datatype 44 30
+layer_def hvtp 31
+layer_map 78 -datatype 44 31
+layer_def hvi 32
+layer_map 75 -datatype 20 32
+layer_def areaid_diode 33
+layer_map 81 -datatype 23 33
+layer_def poly_label 34
+layer_map 66 -texttype 5 34
+layer_map 66 -texttype 16 34
+layer_map 66 -texttype 20 34
+layer_def li1_label 35
+layer_map 67 -texttype 5 35
+layer_map 67 -texttype 16 35
+layer_map 67 -texttype 20 35
+layer_def met1_label 36
+layer_map 68 -texttype 5 36
+layer_map 68 -texttype 16 36
+layer_map 68 -texttype 20 36
+layer_def met2_label 37
+layer_map 69 -texttype 5 37
+layer_map 69 -texttype 16 37
+layer_map 69 -texttype 20 37
+layer_def met3_label 38
+layer_map 70 -texttype 5 38
+layer_map 70 -texttype 16 38
+layer_map 70 -texttype 20 38
+layer_def met4_label 39
+layer_map 71 -texttype 5 39
+layer_map 71 -texttype 16 39
+layer_map 71 -texttype 20 39
+layer_def met5_label 40
+layer_map 72 -texttype 5 40
+layer_map 72 -texttype 16 40
+layer_map 72 -texttype 20 40
+layer_def nwell_label 41
+layer_map 64 -texttype 5 41
+layer_map 64 -texttype 16 41
+layer_def pwell_label 42
+layer_map 64 -texttype 59 42
+layer_map 122 -texttype 5 42
+layer_map 122 -texttype 16 42
+layer_def poly_short 41
+layer_map 66 -datatype 15 41
+layer_def li1_short 42
+layer_map 67 -datatype 15 42
+layer_def met1_short 43
+layer_map 68 -datatype 15 43
+layer_def met2_short 44
+layer_map 69 -datatype 15 44
+layer_def met3_short 45
+layer_map 70 -datatype 15 45
+layer_def met4_short 46
+layer_map 71 -datatype 15 46
+layer_def met5_short 47
+layer_map 72 -datatype 15 47
+
+// ---- conductors (pin shapes count as drawn shapes; short markers cut them), wells
+or poly_in poly_pin -outputlayer poly_all
+not poly_all poly_short -outputlayer poly
+or li1_in li1_pin -outputlayer li1_all
+not li1_all li1_short -outputlayer li1
+or met1_in met1_pin -outputlayer met1_all
+not met1_all met1_short -outputlayer met1
+or met2_in met2_pin -outputlayer met2_all
+not met2_all met2_short -outputlayer met2
+or met3_in met3_pin -outputlayer met3_all
+not met3_all met3_short -outputlayer met3
+or met4_in met4_pin -outputlayer met4_all
+not met4_all met4_short -outputlayer met4
+or met5_in met5_pin -outputlayer met5_all
+not met5_all met5_short -outputlayer met5
+or nwell_in nwell_pin -outputlayer nwell
+extent -outputlayer chip_extent
+not chip_extent nwell -outputlayer substrate
+or substrate pwell_in pwell_pin -outputlayer pwell_all
+not pwell_all nwell -outputlayer pwell
+
+// ---- diffusion, gates, taps
+and poly diff -outputlayer gate
+not diff poly -outputlayer sd
+// diode_pw2nd: n+ diffusion in pwell under areaid.diode (antenna diode cells)
+and sd nsdm -outputlayer nsd_all
+and nsd_all areaid_diode -outputlayer ndiode_all
+not ndiode_all nwell -outputlayer ndiode
+not nsd_all ndiode -outputlayer nSourceDrain
+and sd psdm -outputlayer pSourceDrain
+and tap psdm -outputlayer ptap
+and tap nsdm -outputlayer ntap
+not gate hvi -outputlayer gate_lv
+and gate_lv nsdm -outputlayer ngate_all
+not ngate_all nwell -outputlayer ngate
+and ngate lvtn -outputlayer ngate_lvt
+not ngate lvtn -outputlayer ngate_std
+and gate_lv psdm -outputlayer pgate_all
+and pgate_all nwell -outputlayer pgate
+and pgate hvtp -outputlayer pgate_hvt
+not pgate hvtp -outputlayer pgate_nh
+and pgate_nh lvtn -outputlayer pgate_lvt
+not pgate_nh lvtn -outputlayer pgate_std
+
+// ---- contacts
+or diff tap -outputlayer difftap
+and licon difftap -outputlayer licon1
+not licon difftap -outputlayer licon_nd
+and licon_nd poly -outputlayer poly_licon1
+
+// ---- connectivity
+connect met5 met4 -by via4
+connect met4 met3 -by via3
+connect met3 met2 -by via2
+connect met2 met1 -by via
+connect met1 li1 -by mcon
+connect li1 poly -by poly_licon1
+connect li1 nSourceDrain -by licon1
+connect li1 pSourceDrain -by licon1
+connect li1 ntap -by licon1
+connect li1 ptap -by licon1
+connect li1 ndiode -by licon1
+connect nSourceDrain ptap
+connect pSourceDrain ntap
+connect poly ngate_std
+connect poly ngate_lvt
+connect poly pgate_std
+connect poly pgate_lvt
+connect poly pgate_hvt
+sconnect ntap nwell
+sconnect ptap pwell
+
+// ---- labels
+attach poly_label poly
+attach li1_label li1
+attach met1_label met1
+attach met2_label met2
+attach met3_label met3
+attach met4_label met4
+attach met5_label met5
+attach nwell_label nwell
+attach pwell_label pwell
+port -text_layer poly_label li1_label met1_label met2_label met3_label met4_label met5_label nwell_label pwell_label
+
+// ---- devices
+device MN (nfet_01v8) ngate_std ngate_std (G) nSourceDrain (S) nSourceDrain (D) pwell (B) [
+    property W, L, AS, AD, PS, PD
+    W = perimeter_coincide(G, nSourceDrain) / 2
+    L = (perimeter(G) - perimeter_coincide(G, nSourceDrain)) / 2
+    AS = area(S)
+    AD = area(D)
+    PS = perimeter(S)
+    PD = perimeter(D)
+]
+device MN (nfet_01v8_lvt) ngate_lvt ngate_lvt (G) nSourceDrain (S) nSourceDrain (D) pwell (B) [
+    property W, L, AS, AD, PS, PD
+    W = perimeter_coincide(G, nSourceDrain) / 2
+    L = (perimeter(G) - perimeter_coincide(G, nSourceDrain)) / 2
+    AS = area(S)
+    AD = area(D)
+    PS = perimeter(S)
+    PD = perimeter(D)
+]
+device MP (pfet_01v8) pgate_std pgate_std (G) pSourceDrain (S) pSourceDrain (D) nwell (B) [
+    property W, L, AS, AD, PS, PD
+    W = perimeter_coincide(G, pSourceDrain) / 2
+    L = (perimeter(G) - perimeter_coincide(G, pSourceDrain)) / 2
+    AS = area(S)
+    AD = area(D)
+    PS = perimeter(S)
+    PD = perimeter(D)
+]
+device MP (pfet_01v8_lvt) pgate_lvt pgate_lvt (G) pSourceDrain (S) pSourceDrain (D) nwell (B) [
+    property W, L, AS, AD, PS, PD
+    W = perimeter_coincide(G, pSourceDrain) / 2
+    L = (perimeter(G) - perimeter_coincide(G, pSourceDrain)) / 2
+    AS = area(S)
+    AD = area(D)
+    PS = perimeter(S)
+    PD = perimeter(D)
+]
+device MP (pfet_01v8_hvt) pgate_hvt pgate_hvt (G) pSourceDrain (S) pSourceDrain (D) nwell (B) [
+    property W, L, AS, AD, PS, PD
+    W = perimeter_coincide(G, pSourceDrain) / 2
+    L = (perimeter(G) - perimeter_coincide(G, pSourceDrain)) / 2
+    AS = area(S)
+    AD = area(D)
+    PS = perimeter(S)
+    PD = perimeter(D)
+]
+device D (diode_pw2nd) ndiode pwell (POS) ndiode (NEG) [
+    property A, P
+    A = area(ndiode)
+    P = perimeter(ndiode)
+]
+device R (short) poly_short poly poly [ 0 ]
+device R (short) li1_short li1 li1 [ 0 ]
+device R (short) met1_short met1 met1 [ 0 ]
+device R (short) met2_short met2 met2 [ 0 ]
+device R (short) met3_short met3 met3 [ 0 ]
+device R (short) met4_short met4 met4 [ 0 ]
+device R (short) met5_short met5 met5 [ 0 ]
+
+// ---- comparison
+lvs_check_property MN W w
+lvs_check_property MN L l
+lvs_check_property MP W w
+lvs_check_property MP L l

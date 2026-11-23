@@ -1,0 +1,7 @@
+.subckt pfet_01v8_w1p65_l0p15_nf5 D G S B
+X0 D G S B sky130_fd_pr__pfet_01v8 w=1.65 l=0.15
+X1 D G S B sky130_fd_pr__pfet_01v8 w=1.65 l=0.15
+X2 D G S B sky130_fd_pr__pfet_01v8 w=1.65 l=0.15
+X3 D G S B sky130_fd_pr__pfet_01v8 w=1.65 l=0.15
+X4 D G S B sky130_fd_pr__pfet_01v8 w=1.65 l=0.15
+.ends

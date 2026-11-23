@@ -1,0 +1,6 @@
+.subckt pfet_01v8_hvt_w1_l0p15_nf4_tie D G S
+X0 D G S S sky130_fd_pr__pfet_01v8_hvt w=1 l=0.15
+X1 D G S S sky130_fd_pr__pfet_01v8_hvt w=1 l=0.15
+X2 D G S S sky130_fd_pr__pfet_01v8_hvt w=1 l=0.15
+X3 D G S S sky130_fd_pr__pfet_01v8_hvt w=1 l=0.15
+.ends

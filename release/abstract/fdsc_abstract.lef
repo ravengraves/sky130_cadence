@@ -1,0 +1,332 @@
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+MACRO sky130_fd_sc_hs__dfxtp_1
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  FOREIGN sky130_fd_sc_hs__dfxtp_1 0 0 ;
+  SIZE 8.16 BY 3.33 ;
+  SYMMETRY X Y ;
+  SITE unit ;
+  PIN CLK
+    DIRECTION INPUT ;
+    USE CLOCK ;
+    PORT
+      LAYER li1 ;
+        RECT 0.125 1.3 0.505 1.78 ;
+    END
+  END CLK
+  PIN D
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER li1 ;
+        RECT 1.87 2.025 2.25 2.355 ;
+        RECT 1.97 1.125 2.25 2.355 ;
+    END
+  END D
+  PIN Q
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER li1 ;
+        RECT 7.715 2.03 8.075 2.98 ;
+        RECT 7.905 0.35 8.075 2.98 ;
+        RECT 7.715 0.35 8.075 1.13 ;
+    END
+  END Q
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 0 -0.245 8.16 0.245 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 0 3.085 8.16 3.575 ;
+    END
+  END VPWR
+  OBS
+    LAYER li1 ;
+      RECT 6.23 -0.085 6.56 1.06 ;
+      RECT 0.545 -0.085 0.795 0.79 ;
+      RECT 7.22 -0.085 7.535 0.68 ;
+      RECT 1.985 -0.085 2.315 0.56 ;
+      RECT 4.07 -0.085 4.32 0.52 ;
+      RECT 0 -0.085 8.16 0.085 ;
+      RECT 0 3.245 8.16 3.415 ;
+      RECT 7.21 2.03 7.54 3.415 ;
+      RECT 6.2 2.52 6.53 3.415 ;
+      RECT 3.8 2.965 4.13 3.415 ;
+      RECT 1.575 2.965 1.91 3.415 ;
+      RECT 0.645 2.29 0.815 3.415 ;
+      RECT 6.76 1.69 7.01 2.7 ;
+      RECT 6.05 1.57 6.38 2.24 ;
+      RECT 6.05 1.69 7.735 1.86 ;
+      RECT 7.375 1.35 7.735 1.86 ;
+      RECT 7.375 0.85 7.545 1.86 ;
+      RECT 6.79 0.85 7.545 1.02 ;
+      RECT 6.79 0.35 7.04 1.02 ;
+      RECT 5.12 1.71 5.29 2.735 ;
+      RECT 5.12 1.71 5.82 1.88 ;
+      RECT 5.65 0.73 5.82 1.88 ;
+      RECT 6.875 1.19 7.205 1.52 ;
+      RECT 5.65 1.23 7.205 1.4 ;
+      RECT 5.22 0.73 5.82 0.98 ;
+      RECT 0.115 1.95 0.445 2.98 ;
+      RECT 0.115 1.95 0.845 2.12 ;
+      RECT 0.675 0.96 0.845 2.12 ;
+      RECT 3.1 1.75 3.76 2.08 ;
+      RECT 3.59 0.275 3.76 2.08 ;
+      RECT 0.675 0.96 1.135 1.55 ;
+      RECT 0.965 0.255 1.135 1.55 ;
+      RECT 0.115 0.96 1.135 1.13 ;
+      RECT 0.115 0.35 0.365 1.13 ;
+      RECT 1.645 0.73 2.655 0.9 ;
+      RECT 2.485 0.275 2.655 0.9 ;
+      RECT 3.59 0.69 4.66 0.86 ;
+      RECT 4.49 0.255 4.66 0.86 ;
+      RECT 1.645 0.255 1.815 0.9 ;
+      RECT 5.565 0.255 5.895 0.51 ;
+      RECT 2.485 0.275 3.76 0.445 ;
+      RECT 4.49 0.255 5.895 0.425 ;
+      RECT 0.965 0.255 1.815 0.425 ;
+      RECT 4.78 2.905 5.84 3.075 ;
+      RECT 5.51 2.05 5.84 3.075 ;
+      RECT 1.015 1.82 1.345 2.98 ;
+      RECT 2.08 2.795 3.46 2.965 ;
+      RECT 4.78 1.37 4.95 3.075 ;
+      RECT 3.29 2.625 4.95 2.795 ;
+      RECT 1.015 2.625 2.25 2.795 ;
+      RECT 1.305 0.595 1.475 2.795 ;
+      RECT 1.305 1.35 1.76 1.68 ;
+      RECT 4.78 1.37 5.48 1.54 ;
+      RECT 5.17 1.15 5.48 1.54 ;
+      RECT 4.335 2.125 4.61 2.455 ;
+      RECT 4.44 1.03 4.61 2.455 ;
+      RECT 3.93 1.03 4.26 1.415 ;
+      RECT 3.93 1.03 5 1.2 ;
+      RECT 4.83 0.595 5 1.2 ;
+      RECT 2.76 2.285 3.12 2.625 ;
+      RECT 2.76 2.285 4.14 2.455 ;
+      RECT 3.97 1.625 4.14 2.455 ;
+      RECT 2.76 1.41 2.93 2.625 ;
+      RECT 3.97 1.625 4.27 1.955 ;
+      RECT 2.76 1.41 3.42 1.58 ;
+      RECT 3.155 0.615 3.42 1.58 ;
+      RECT 2.42 1.07 2.59 2.625 ;
+      RECT 2.42 1.07 2.975 1.24 ;
+    LAYER mcon ;
+      RECT 7.835 -0.085 8.005 0.085 ;
+      RECT 7.835 3.245 8.005 3.415 ;
+      RECT 7.355 -0.085 7.525 0.085 ;
+      RECT 7.355 3.245 7.525 3.415 ;
+      RECT 6.875 -0.085 7.045 0.085 ;
+      RECT 6.875 3.245 7.045 3.415 ;
+      RECT 6.395 -0.085 6.565 0.085 ;
+      RECT 6.395 3.245 6.565 3.415 ;
+      RECT 5.915 -0.085 6.085 0.085 ;
+      RECT 5.915 3.245 6.085 3.415 ;
+      RECT 5.435 -0.085 5.605 0.085 ;
+      RECT 5.435 3.245 5.605 3.415 ;
+      RECT 4.955 -0.085 5.125 0.085 ;
+      RECT 4.955 3.245 5.125 3.415 ;
+      RECT 4.475 -0.085 4.645 0.085 ;
+      RECT 4.475 3.245 4.645 3.415 ;
+      RECT 3.995 -0.085 4.165 0.085 ;
+      RECT 3.995 3.245 4.165 3.415 ;
+      RECT 3.515 -0.085 3.685 0.085 ;
+      RECT 3.515 3.245 3.685 3.415 ;
+      RECT 3.035 -0.085 3.205 0.085 ;
+      RECT 3.035 3.245 3.205 3.415 ;
+      RECT 2.555 -0.085 2.725 0.085 ;
+      RECT 2.555 3.245 2.725 3.415 ;
+      RECT 2.075 -0.085 2.245 0.085 ;
+      RECT 2.075 3.245 2.245 3.415 ;
+      RECT 1.595 -0.085 1.765 0.085 ;
+      RECT 1.595 3.245 1.765 3.415 ;
+      RECT 1.115 -0.085 1.285 0.085 ;
+      RECT 1.115 3.245 1.285 3.415 ;
+      RECT 0.635 -0.085 0.805 0.085 ;
+      RECT 0.635 3.245 0.805 3.415 ;
+      RECT 0.155 -0.085 0.325 0.085 ;
+      RECT 0.155 3.245 0.325 3.415 ;
+  END
+END sky130_fd_sc_hs__dfxtp_1
+
+MACRO sky130_fd_sc_hs__inv_1
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  FOREIGN sky130_fd_sc_hs__inv_1 0 0 ;
+  SIZE 1.44 BY 3.33 ;
+  SYMMETRY X Y ;
+  SITE unit ;
+  PIN A
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER li1 ;
+        RECT 0.125 1.3 0.815 1.78 ;
+    END
+  END A
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER li1 ;
+        RECT 0.985 0.35 1.315 2.98 ;
+    END
+  END Y
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 0 -0.245 1.44 0.245 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 0 3.085 1.44 3.575 ;
+    END
+  END VPWR
+  OBS
+    LAYER li1 ;
+      RECT 0.485 -0.085 0.815 1.13 ;
+      RECT 0 -0.085 1.44 0.085 ;
+      RECT 0 3.245 1.44 3.415 ;
+      RECT 0.485 1.95 0.815 3.415 ;
+    LAYER mcon ;
+      RECT 1.115 -0.085 1.285 0.085 ;
+      RECT 1.115 3.245 1.285 3.415 ;
+      RECT 0.635 -0.085 0.805 0.085 ;
+      RECT 0.635 3.245 0.805 3.415 ;
+      RECT 0.155 -0.085 0.325 0.085 ;
+      RECT 0.155 3.245 0.325 3.415 ;
+  END
+END sky130_fd_sc_hs__inv_1
+
+MACRO sky130_fd_sc_hs__mux2_1
+  CLASS CORE ;
+  ORIGIN 0 0 ;
+  FOREIGN sky130_fd_sc_hs__mux2_1 0 0 ;
+  SIZE 4.32 BY 3.33 ;
+  SYMMETRY X Y ;
+  SITE unit ;
+  PIN A0
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER li1 ;
+        RECT 1.885 1.18 2.275 1.55 ;
+    END
+  END A0
+  PIN A1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER li1 ;
+        RECT 2.455 0.81 2.785 1.55 ;
+        RECT 1.515 0.81 2.785 0.98 ;
+        RECT 1.345 1.22 1.685 1.55 ;
+        RECT 1.515 0.81 1.685 1.55 ;
+    END
+  END A1
+  PIN S
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER li1 ;
+        RECT 0.505 1.35 0.835 1.78 ;
+    END
+  END S
+  PIN X
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER li1 ;
+        RECT 3.795 1.82 4.235 2.98 ;
+        RECT 4.065 0.35 4.235 2.98 ;
+        RECT 3.865 0.35 4.235 1.13 ;
+    END
+  END X
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 0 -0.245 4.32 0.245 ;
+    END
+  END VGND
+  PIN VPWR
+    DIRECTION INOUT ;
+    USE POWER ;
+    SHAPE ABUTMENT ;
+    PORT
+      LAYER met1 ;
+        RECT 0 3.085 4.32 3.575 ;
+    END
+  END VPWR
+  OBS
+    LAYER li1 ;
+      RECT 0.625 -0.085 0.835 1.13 ;
+      RECT 3.295 -0.085 3.625 0.81 ;
+      RECT 0.625 -0.085 1.005 0.68 ;
+      RECT 0 -0.085 4.32 0.085 ;
+      RECT 0 3.245 4.32 3.415 ;
+      RECT 3.295 1.82 3.625 3.415 ;
+      RECT 0.65 2.4 0.98 3.415 ;
+      RECT 2.065 1.72 2.395 2.735 ;
+      RECT 1.005 1.72 2.395 1.89 ;
+      RECT 1.005 0.85 1.175 1.89 ;
+      RECT 3.525 1.3 3.895 1.63 ;
+      RECT 3.525 0.98 3.695 1.63 ;
+      RECT 2.955 0.98 3.695 1.15 ;
+      RECT 1.175 0.39 1.345 1.02 ;
+      RECT 2.955 0.39 3.125 1.15 ;
+      RECT 1.175 0.39 3.125 0.64 ;
+      RECT 1.15 2.905 3.125 3.075 ;
+      RECT 2.955 1.32 3.125 3.075 ;
+      RECT 1.15 2.06 1.32 3.075 ;
+      RECT 0.115 1.95 0.445 2.7 ;
+      RECT 0.115 2.06 1.32 2.23 ;
+      RECT 0.115 0.54 0.285 2.7 ;
+      RECT 2.955 1.32 3.355 1.65 ;
+      RECT 0.115 0.54 0.445 1.13 ;
+    LAYER mcon ;
+      RECT 3.995 -0.085 4.165 0.085 ;
+      RECT 3.995 3.245 4.165 3.415 ;
+      RECT 3.515 -0.085 3.685 0.085 ;
+      RECT 3.515 3.245 3.685 3.415 ;
+      RECT 3.035 -0.085 3.205 0.085 ;
+      RECT 3.035 3.245 3.205 3.415 ;
+      RECT 2.555 -0.085 2.725 0.085 ;
+      RECT 2.555 3.245 2.725 3.415 ;
+      RECT 2.075 -0.085 2.245 0.085 ;
+      RECT 2.075 3.245 2.245 3.415 ;
+      RECT 1.595 -0.085 1.765 0.085 ;
+      RECT 1.595 3.245 1.765 3.415 ;
+      RECT 1.115 -0.085 1.285 0.085 ;
+      RECT 1.115 3.245 1.285 3.415 ;
+      RECT 0.635 -0.085 0.805 0.085 ;
+      RECT 0.635 3.245 0.805 3.415 ;
+      RECT 0.155 -0.085 0.325 0.085 ;
+      RECT 0.155 3.245 0.325 3.415 ;
+  END
+END sky130_fd_sc_hs__mux2_1
+
+END LIBRARY

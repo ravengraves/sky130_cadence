@@ -1,0 +1,30 @@
+sky130_fd_sc_hs__inv_1       pin A     capacitance ours 0.00329 pF (rise 0.00328, fall 0.00330)  reference 0.00284
+sky130_fd_sc_hs__inv_1       A->Y combi             cell_rise        mean  +23.5 %  max |%| 257.2  max diff  +0.183 ns  (91 pts)
+sky130_fd_sc_hs__inv_1       A->Y combi             cell_fall        mean   -9.4 %  max |%|  35.3  max diff  -0.093 ns  (91 pts)
+sky130_fd_sc_hs__inv_1       A->Y combi             rise_transition  mean  +10.0 %  max |%|  15.1  max diff  +0.179 ns  (91 pts)
+sky130_fd_sc_hs__inv_1       A->Y combi             fall_transition  mean   -7.2 %  max |%|  12.0  max diff  -0.110 ns  (91 pts)
+sky130_fd_sc_hs__mux2_1      pin S     capacitance ours 0.00525 pF (rise 0.00524, fall 0.00525)  reference 0.00492
+sky130_fd_sc_hs__mux2_1      pin A0    capacitance ours 0.00312 pF (rise 0.00311, fall 0.00313)  reference 0.00291
+sky130_fd_sc_hs__mux2_1      pin A1    capacitance ours 0.00375 pF (rise 0.00373, fall 0.00377)  reference 0.00339
+sky130_fd_sc_hs__mux2_1      A0->X combi            cell_rise        mean  +11.4 %  max |%|  19.6  max diff  +0.115 ns  (91 pts)
+sky130_fd_sc_hs__mux2_1      A0->X combi            cell_fall        mean   +3.2 %  max |%|   7.8  max diff  +0.019 ns  (91 pts)
+sky130_fd_sc_hs__mux2_1      A0->X combi            rise_transition  mean   +6.8 %  max |%|  18.5  max diff  +0.059 ns  (91 pts)
+sky130_fd_sc_hs__mux2_1      A0->X combi            fall_transition  mean   -0.4 %  max |%|   6.6  max diff  -0.058 ns  (91 pts)
+sky130_fd_sc_hs__mux2_1      A1->X combi            cell_rise        mean  +12.8 %  max |%|  22.8  max diff  +0.124 ns  (91 pts)
+sky130_fd_sc_hs__mux2_1      A1->X combi            cell_fall        mean   +7.2 %  max |%|  14.7  max diff  +0.044 ns  (91 pts)
+sky130_fd_sc_hs__mux2_1      A1->X combi            rise_transition  mean   +8.4 %  max |%|  22.4  max diff  +0.057 ns  (91 pts)
+sky130_fd_sc_hs__mux2_1      A1->X combi            fall_transition  mean   +1.1 %  max |%|   8.7  max diff  -0.056 ns  (91 pts)
+sky130_fd_sc_hs__mux2_1      S->X combi             cell_rise        mean   +9.9 %  max |%|  17.1  max diff  +0.122 ns  (91 pts)
+sky130_fd_sc_hs__mux2_1      S->X combi             cell_fall        mean   +7.0 %  max |%|  14.2  max diff  +0.041 ns  (91 pts)
+sky130_fd_sc_hs__mux2_1      S->X combi             rise_transition  mean   +7.1 %  max |%|  17.5  max diff  +0.057 ns  (91 pts)
+sky130_fd_sc_hs__mux2_1      S->X combi             fall_transition  mean   +0.5 %  max |%|  13.8  max diff  -0.061 ns  (91 pts)
+sky130_fd_sc_hs__dfxtp_1     pin CLK   capacitance ours 0.00344 pF (rise 0.00344, fall 0.00344)  reference 0.00316
+sky130_fd_sc_hs__dfxtp_1     pin D     capacitance ours 0.00195 pF (rise 0.00195, fall 0.00195)  reference 0.00187
+sky130_fd_sc_hs__dfxtp_1     CLK->Q risin           cell_rise        mean   +7.4 %  max |%|  11.5  max diff  +0.097 ns  (91 pts)
+sky130_fd_sc_hs__dfxtp_1     CLK->Q risin           cell_fall        mean   +5.1 %  max |%|  13.3  max diff  -0.045 ns  (91 pts)
+sky130_fd_sc_hs__dfxtp_1     CLK->Q risin           rise_transition  mean   +5.9 %  max |%|   8.7  max diff  +0.079 ns  (91 pts)
+sky130_fd_sc_hs__dfxtp_1     CLK->Q risin           fall_transition  mean   -6.2 %  max |%|  12.1  max diff  -0.111 ns  (91 pts)
+sky130_fd_sc_hs__dfxtp_1     CLK->D setup           rise_constraint  mean   +6.7 %  max |%|  77.6  max diff  +0.031 ns  (100 pts)
+sky130_fd_sc_hs__dfxtp_1     CLK->D setup           fall_constraint  mean  +19.6 %  max |%|  80.8  max diff  +0.109 ns  (100 pts)
+sky130_fd_sc_hs__dfxtp_1     CLK->D hold_           rise_constraint  mean -142.6 %  max |%| 552.0  max diff  -0.143 ns  (100 pts)
+sky130_fd_sc_hs__dfxtp_1     CLK->D hold_           fall_constraint  mean  -12.9 %  max |%| 148.2  max diff  -0.105 ns  (100 pts)

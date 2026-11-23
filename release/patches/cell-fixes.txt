@@ -1,0 +1,16 @@
+Layout fixes applied by `convert` (sky130cad/cellfix.py):
+
+sky130_fd_sc_hs__xor3_1: met1 polygon with bounding box (2.975, 1.55, 5.665, 1.78) (um) replaced by:
+  RECT 2.975 1.550 3.265 1.780
+  RECT 3.265 1.595 4.750 1.735
+  RECT 4.610 1.595 4.750 2.090
+  RECT 4.610 1.950 5.665 2.090
+  RECT 5.525 1.780 5.665 2.090
+  RECT 5.375 1.550 5.665 1.780
+LEF OBS met1 rectangles removed:
+  RECT 2.975 1.550 3.265 1.595
+  RECT 2.975 1.595 5.665 1.735
+  RECT 2.975 1.735 3.265 1.780
+  RECT 5.375 1.550 5.665 1.595
+  RECT 5.375 1.735 5.665 1.780
+
